@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# csMatriculation
+>>>>>>> 9e095dcb9e665bc0eeb09034edc92570d0de6a2a
