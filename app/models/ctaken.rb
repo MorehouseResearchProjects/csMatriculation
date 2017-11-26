@@ -1,0 +1,2 @@
+class Ctaken < ApplicationRecord
+end
