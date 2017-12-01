@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
+    @courses = Course.all
   end
 
   def new
@@ -18,8 +23,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def each
-  end 
+
 
   private
 

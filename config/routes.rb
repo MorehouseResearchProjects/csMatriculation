@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :courses
   get 'sessions/new'
 
   get 'welcome/index'
@@ -15,4 +16,3 @@ Rails.application.routes.draw do
 
 
 end
-
