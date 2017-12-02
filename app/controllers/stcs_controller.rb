@@ -29,11 +29,12 @@ class StcsController < ApplicationController
 
     respond_to do |format|
       if @stc.save
-        format.html { redirect_to @stc, notice: 'Stc was successfully created.' }
-        format.json { render :show, status: :created, location: @stc }
+        #format.html { redirect_to @stc, notice: 'Stc was successfully created.' }
+        #format.json { render :show, status: :created, location: @stc }
+         flash[:success] = "Course added "
       else
-        format.html { render :new }
-        format.json { render json: @stc.errors, status: :unprocessable_entity }
+        #format.html { render :new }
+        #format.json { render json: @stc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,6 +71,6 @@ class StcsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stc_params
-      params.fetch(:stc, {})
+    params.require(:stcs).permit(:semester)
     end
 end
