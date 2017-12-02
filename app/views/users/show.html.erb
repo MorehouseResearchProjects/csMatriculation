@@ -1,5 +1,3 @@
-
-
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
@@ -13,15 +11,5 @@
   </aside>
 </div>
 <div class="row">
-  <%= form_for(Stc.new) do |f| %>
-    <% @courses.each do |course| %>
-      <%= render 'shared/error_messages' %>
-      <%= label_tag course.title, course.title %>
-      <%= f.label :semester, 'Semester' %>
-      <%= f.text_field :semester, class: 'form-control' %>
-
-      <%end%>
-      <%= f.submit "Student taken course", class: "btn btn-primary" %>
-
-  <% end %>
+    <%= render "stcs/show.html.erb" %>
 </div>
