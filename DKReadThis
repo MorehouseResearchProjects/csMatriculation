@@ -1,0 +1,11 @@
+LOG OUTPUT FROM FAILED COURSE UPLOAD
+
+
+Started POST "/users/2" for 127.0.0.1 at 2017-12-02 03:01:54 -0500
+Processing by StcsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mlqOOnhSha8hhu8+lcHcE7mHWFp8OAlbxVSMfI5SGJs3WmgKNqa65k5TyPu6K81cpKZxAr2enM3X/4fkhD6lYg==", "stc"=>{"user_id"=>"1"}, "semester"=>"Fall", "year"=>"2014", "commit"=>"Save ", "id"=>"2"}
+   (0.0ms)  begin transaction
+  User Load (1.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+   (0.0ms)  rollback transaction
+No template found for StcsController#create, rendering head :no_content
+Completed 204 No Content in 708ms (ActiveRecord: 1.0ms)

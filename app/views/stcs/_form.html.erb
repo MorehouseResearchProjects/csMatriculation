@@ -1,14 +1,10 @@
-<%= form_with(model: @stc, local: true) do |form| %>
+<%= form_with(model: @stc, local: false, action:'stcs#create') do |form| %>
 
-<%= @courses.find(1) do |course| %>
-  <%= render 'shared/error_messages' %>
-  <%= label_tag course.title, course.title %>
-  <%= form.label :semester %>
-  <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring']])) %>
+  <%= collection_select(:stc,:user_id, Course.all,:id, :title, {}, { :multiple => false}) %>
+  <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring'],['Summer', 'Summer']])) %>
   <%= select_tag(:year, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
-  <%end%>
-
   <div class="actions">
     <%= form.submit %>
+    <% end %>
+
   </div>
-<% end %>

@@ -25,18 +25,14 @@ class StcsController < ApplicationController
   # POST /stcs
   # POST /stcs.json
   def create
-    @stc = Stc.new(stc_params)
+    @stc = Stc.new(:semester => params[:stc][:semester], :year => params[:stc][:year],:course_id => params[:stc][:course_id], :user_id => params[:stc][:user_id])
 
-    respond_to do |format|
+
       if @stc.save
         #format.html { redirect_to @stc, notice: 'Stc was successfully created.' }
         #format.json { render :show, status: :created, location: @stc }
          flash[:success] = "Course added "
-      else
-        #format.html { render :new }
-        #format.json { render json: @stc.errors, status: :unprocessable_entity }
-      end
-    end
+       end
   end
 
   # PATCH/PUT /stcs/1
@@ -71,6 +67,6 @@ class StcsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stc_params
-    params.require(:stcs).permit(:semester)
+      params.require(:stc).permit!
     end
-end
+    end
