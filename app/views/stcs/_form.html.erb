@@ -1,8 +1,9 @@
-<%= form_with(model: @stc, local: false, action:'stcs#create') do |form| %>
+<%= form_for(Stc.new, action:'stcs#create') do |form| %>
 
-  <%= collection_select(:stc,:user_id, Course.all,:id, :title, {}, { :multiple => false}) %>
-  <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring'],['Summer', 'Summer']])) %>
-  <%= select_tag(:year, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
+  <%= form.collection_select(:course_id, Course.all,:id, :title,{}, { :multiple => false}) %>
+  <%= form.select(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring'],['Summer', 'Summer']])) %>
+  <%= form.select(:year, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
+  <%= form.select(:user_id, options_for_select([[1,@user.id]])) %>
   <div class="actions">
     <%= form.submit %>
     <% end %>

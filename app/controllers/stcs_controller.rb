@@ -25,13 +25,16 @@ class StcsController < ApplicationController
   # POST /stcs
   # POST /stcs.json
   def create
-    @stc = Stc.new(:semester => params[:stc][:semester], :year => params[:stc][:year],:course_id => params[:stc][:course_id], :user_id => params[:stc][:user_id])
+    @stc = Stc.new(stc_params)
 
 
       if @stc.save
         #format.html { redirect_to @stc, notice: 'Stc was successfully created.' }
         #format.json { render :show, status: :created, location: @stc }
          flash[:success] = "Course added "
+
+      else
+        flash[:notice] = "Course addition failed"
        end
   end
 

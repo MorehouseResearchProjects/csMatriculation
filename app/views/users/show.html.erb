@@ -13,33 +13,10 @@
   </aside>
 </div>
 <div class="row">
-<<<<<<< HEAD
+
   <%= render 'stcs/form.html.erb' %>
 
-=======
-<<<<<<< HEAD
-  <p id="notice"><%= notice %></p>
-  <%= form_for(Stc.new, url:{action:'new'}) do |f| %>
-    <% @courses.each do |course| %>
-      <%= render 'shared/error_messages' %>
-      <%= label_tag course.title, course.title %>
-      <%= f.label :semester %>
-      <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring']])) %>
-      <%= select_tag(:semester, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
-      <%end%>
 
-    <%= f.submit "Student taken course", class: "btn btn-primary" %>
-  <% end %>
 
-<% render "stcs/show.html.erb" %>
 
-=======
-<<<<<<< HEAD
-  <%= render 'stcs/form.html.erb' %>
-
-=======
-    <%= render "stcs/show.html.erb" %>
->>>>>>> a5247b3296662d5831860db85bf0a1aaf0319c41
->>>>>>> origin/master
->>>>>>> 86b5da6fd263162333f36a30221e3f71f39b29dd
 </div>
