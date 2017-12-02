@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-<<<<<<< HEAD
-=======
 <%= form_for(Stc.new, url:{action:'new'}) do |f| %>
   <% @courses.each do |course| %>
     <%= render 'shared/error_messages' %>
@@ -12,4 +10,3 @@
 
   <%= f.submit "Student taken course", class: "btn btn-primary" %>
 <% end %>
->>>>>>> 0dc255f8d494c62548531da9c6f684fee4d2cce2
