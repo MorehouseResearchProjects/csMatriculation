@@ -1,1 +1,14 @@
 <p id="notice"><%= notice %></p>
+<<<<<<< HEAD
+=======
+<%= form_for(Stc.new, url:{action:'new'}) do |f| %>
+  <% @courses.each do |course| %>
+    <%= render 'shared/error_messages' %>
+    <%= label_tag course.title, course.title %>
+    <%= f.label :semester %>
+    <%= select_tag(:week_day, options_for_select([['--------','-----------'], ['Fall 2012', 'Fall 2012'], ['Spring 2013', 'Spring 2013'], ['Fall 2013', 'Fall 2013'], ['Spring 2014', 'Spring 2014'], ['Fall 2014', 'Fall 2014'], ['Spring 2015', 'Spring 2015'], ['Fall 2015', 'Fall 2015'], ['Spring 2016', 'Spring 2016'], ['Fall 2016', 'Fall 2016'], ['Spring 2017', 'Spring 2017'], ['Fall 2017', 'Fall 2017']])) %>
+    <%end%>
+
+  <%= f.submit "Student taken course", class: "btn btn-primary" %>
+<% end %>
+>>>>>>> 0dc255f8d494c62548531da9c6f684fee4d2cce2
