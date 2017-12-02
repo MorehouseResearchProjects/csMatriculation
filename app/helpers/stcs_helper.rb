@@ -1,0 +1,2 @@
+module StcsHelper
+end

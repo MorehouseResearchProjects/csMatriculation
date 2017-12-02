@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<%= form_for(Stc.new, url:{action:'new'}) do |f| %>
+  <% @courses.each do |course| %>
+    <%= render 'shared/error_messages' %>
+    <%= label_tag course.title, course.title %>
+    <%= f.label :semester %>
+    <%= f.text_field :semester, class: 'form-control' %>
+    <%end%>
+
+  <%= f.submit "Student taken course", class: "btn btn-primary" %>
+<% end %>

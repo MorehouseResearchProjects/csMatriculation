@@ -10,16 +10,7 @@
   </aside>
 </div>
 <div class="row">
-<%= render "shared/show_courses.html.erb" %>
+<%= render "stcs/show.html.erb" %>
 
-
-    <%  @courses.each do |course| %>
-
-          <%= check_box_tag(course.title) %>
-          <%= label_tag(course.title, course.title) %>
-
-
-
-  <%end%>
 
 </div>
