@@ -1,12 +1,27 @@
 <p id="notice"><%= notice %></p>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> a5247b3296662d5831860db85bf0a1aaf0319c41
+>>>>>>> origin/master
 <%= form_for(Stc.new, url:{action:'new'}) do |f| %>
-  <% @courses.each do |course| %>
+  <% @courses.find(1) do |course| %>
     <%= render 'shared/error_messages' %>
     <%= label_tag course.title, course.title %>
     <%= f.label :semester %>
+<<<<<<< HEAD
     <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring']])) %>
-    <%= select_tag(:semester, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
-    <%end%>
+    <%= select_tag(:year, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
+      <%= f.submit "Student taken course", class: "btn btn-primary" %>
 
-  <%= f.submit "Student taken course", class: "btn btn-primary" %>
+  <%end%>
+
+=======
+    <%= select_tag(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring'],['Summer', 'Summer']])) %>
+    <%= select_tag(:year, options_for_select([['--------','-----------'], ['2012', '2012'], ['2013', '2013'], ['2014', '2014'], ['2015', '2015'], ['2016', '2016'], ['2017', '2017']])) %>
+    <%end%>
+>>>>>>> a5247b3296662d5831860db85bf0a1aaf0319c41
+
 <% end %>
