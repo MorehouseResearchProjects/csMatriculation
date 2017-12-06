@@ -1,98 +1,30 @@
-</div>
-
-
 <!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-.mySlides {display:none}
-</style>
-<body class="w3-content w3-border-left w3-border-right">
-
-  <% provide(:title, @user.name) %>
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
-   <%= gravatar_for @user %>
-        <%= @user.name %>    <hr>
-
-    <form action="/action_page.php" target="_blank">
-      <p><label><i class="fa fa-calendar-check-o"></i> Class</label></p>
-     <div class="w3-dropdown-hover">
-    <button class="w3-button w3-theme">Dropdown <i class="fa fa-caret-down"></i></button>
-    <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
-  </div>      <p><label><i class="fa fa-calendar-o"></i> Semester</label></p>
-     <div class="w3-dropdown-hover">
-    <button class="w3-button w3-theme">Dropdown <i class="fa fa-caret-down"></i></button>
-    <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
-  </div>      <p><label><i class="fa fa-male"></i> Year</label></p>
-     <div class="w3-dropdown-hover">
-    <button class="w3-button w3-theme">Dropdown <i class="fa fa-caret-down"></i></button>
-    <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
-  </div>      <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right"></i> Create STC</button></p>
-    </form>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#apartment" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-building"></i> Log Out</a>
-  </div>
-</nav>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-white" style="margin-left:260px">
-
-  
-  
-<!-- End page content -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>displaycourses</title>
+</head>
+<body>
+<span class="w3-jumbo w3-hide-small"><center><font size = "20"><% provide(:title, @user.name) %></font> </center></span><br>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+                <%= link_to "Log out", "/login", method: :destroy %>
+            </h1>
+        </section>
+    </aside>
 </div>
+<div class="row">
+
+    <%= render 'stcs/form.html.erb' %>
 
 
 
-<script>
 
-
-
-</script>
+</div>
 
 </body>
 </html>
-
-
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-         <%= link_to "Log out", "/login", method: :destroy %>
-        
-      </h1>
-    </section>
-  </aside>
-</div>
-<div class="row">
-
-  <%= render 'stcs/form.html.erb' %>
-
-
-
-
