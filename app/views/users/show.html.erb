@@ -1,24 +1,3 @@
-
-
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-         <%= link_to "Log out", "/login", method: :destroy %>
-      </h1>
-    </section>
-  </aside>
-</div>
-<div class="row">
-
-  <%= render 'stcs/form.html.erb' %>
-
-
-
-
 </div>
 
 <!DOCTYPE html>
@@ -238,4 +217,25 @@ function showDivs(n) {
 
 </body>
 </html>
+
+
+
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+         <%= link_to "Log out", "/login", method: :destroy %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+
+  <%= render 'stcs/form.html.erb' %>
+
+
+
 
