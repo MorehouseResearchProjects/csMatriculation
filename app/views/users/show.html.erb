@@ -5,7 +5,7 @@
     <title>displaycourses</title>
 </head>
 <body>
-<span class="w3-jumbo w3-hide-small"><center><font size = "20"><% provide(:title, @user.name) %></font> </center></span><br>
+<% provide(:title, @user.name) %>
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
@@ -20,10 +20,7 @@
 <div class="row">
 
     <%= render 'stcs/form.html.erb' %>
-
-
-
-
+    
 </div>
 
 </body>
