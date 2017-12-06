@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -36,7 +37,38 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div class="row">
 
   <%= render 'stcs/form.html.erb' %>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>displaycourses</title>
+</head>
+<body>
+<span class="w3-jumbo w3-hide-small"><center><font size = "20"><% provide(:title, @user.name) %></font> </center></span><br>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+                <%= link_to "Log out", "/login", method: :destroy %>
+            </h1>
+        </section>
+    </aside>
+</div>
+<div class="row">
+
+    <%= render 'stcs/form.html.erb' %>
+>>>>>>> 7af9925da83a5e6ad504ccfac09df66eb149fc06
 
 
 
 
+<<<<<<< HEAD
+=======
+</div>
+
+</body>
+</html>
+>>>>>>> 7af9925da83a5e6ad504ccfac09df66eb149fc06
