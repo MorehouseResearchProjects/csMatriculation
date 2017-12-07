@@ -17,3 +17,12 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 
 
 window.alert("hello world");
+
+var checkMath = function(){
+
+  
+
+
+
+
+}
