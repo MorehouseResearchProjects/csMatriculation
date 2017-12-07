@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>displaycourses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 <form action="https://www.wikihow.com/Main-Page" method="get">
@@ -11,6 +15,10 @@
     <input type="checkbox" name="course" value="course2">Course Name<br>
     <input type="submit" value="Submit">
 </form>
+    <hr>
+<h2 class="w3-center"><%= link_to "Log out", "/login", method: :destroy %></h2>
+<div class="w3-center">
+  <br>
 <% provide(:title, @user.name) %>
 <div class="row">
     <aside class="col-md-4">
