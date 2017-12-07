@@ -11,6 +11,10 @@
     <title>displaycourses</title>
 </head>
 <body>
+<div class="w3-right">
+  <br>
+  <a class="w3-button w3-theme"><%= link_to "Log out", "/login", method: :destroy %></a>
+</div>
 <% provide(:title, @user.name) %>
 <div class="row">
     <aside class="col-md-4">
@@ -27,11 +31,6 @@
 
     <%= render 'stcs/form.html.erb' %>
     
-</div>
-    
-    <div class="w3-right">
-  <br>
-  <a class="w3-button w3-theme"><%= link_to "Log out", "/login", method: :destroy %></a>
 </div>
 
 </body>
