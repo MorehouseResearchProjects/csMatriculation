@@ -54,28 +54,60 @@ var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assemb
   just call separate function to add all of its courses
 
   str.replace(/foo/g, "bar")
+
 */
-var boxIsChecked = function(courseList){
+//Function to determince remaining courses left to take
+var remainingCourses = function(){
 
+  var studentTakenCourse = "";
 
-  for(var i = 0; i < courseList.length; i++){
+  for(var i = 0; i < stc.length; i++){
+     studentTakenCourse = stc[i];
 
-    var currId = idMap[courseList[i]];
-  window.alert(currId);
-      var checked = document.getElementById(currId)).checked;
+    if( classes.indexOf(studentTakenCourse) >= 0){
+         window.alert(studentTakenCourse);
+         classes.splice( classes.indexOf(studentTakenCourse), 1 );
+    }
+  }
 
-      if(checked){
-          stc.push.apply(stc,courselist);
-      }
+  var classTable = document.getElementById("classTable");
+  var row = "";
+  var cell1 = "";
+  var cell2 = "";
+  //Creating table for remaining courses after onSubmit is clicked
+  for (var i = 0; i < classes.length; i++) {
 
+          row = classTable.insertRow(i);
+          cell1 = row.insertCell(0);
+          cell1.innerHTML = classes[i];
 
   }
 
 
 
 }
+
+
+var boxIsChecked = function(courseList){
+
+
+  for(var i = 0; i < courseList.length; i++){
+
+    var currId = idMap[courseList[i]];
+  //window.alert(currId);
+      var checked = document.getElementById(currId);
+      //window.alert(currId);
+      if(checked != undefined && checked.checked ){
+          console.log(courseList[i]);
+          stc.push(courseList[i]);
+
+      }
+
+  }
+
+}
  //Call function to do a mass check for each of the id's
- var massCheck = function(){
+ var onSubmit = function(){
 
    var sublistOfCourses = [assemblies,sciences,humanities,
                          genEd,freeElectives,seminars,
@@ -86,7 +118,7 @@ var boxIsChecked = function(courseList){
       boxIsChecked(sublistOfCourses[i]);
     }
 
-
+    remainingCourses();
 
 }
 
@@ -262,17 +294,18 @@ var addButtons = function(buttonNames, newDisplayId){
 
     checkbox.type = "checkbox";
     checkbox.name = buttonNames[i];
-    window.alert(checkbox.name);
+    //window.alert(checkbox.name);
 
     var newCheckBoxId = generateId();
 
     while(newCheckBoxId in usedIds){
       newCheckBoxId = generateId();
     }
+    checkbox.id = newCheckBoxId;
 
     usedIds.push(newCheckBoxId);
     idMap[buttonNames[i]] = newCheckBoxId;
-    window.alert(newCheckBoxId);
+  //  window.alert(newCheckBoxId);
 
 
     label.htmlFor = buttonNames[i];
