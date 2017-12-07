@@ -1,5 +1,7 @@
 class StcsController < ApplicationController
   before_action :set_stc, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
+  # respond_to allows us to render to the same page using Ajax/jScript
 
   # GET /stcs
   # GET /stcs.json
@@ -32,6 +34,11 @@ class StcsController < ApplicationController
         #format.html { redirect_to @stc, notice: 'Stc was successfully created.' }
         #format.json { render :show, status: :created, location: @stc }
          flash[:success] = "Course added "
+         respond_to do |format|
+           format.html
+           format.json
+         end
+         
 
       else
         flash[:notice] = "Course addition failed"

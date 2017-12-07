@@ -1,4 +1,4 @@
-<%= form_for(Stc.new, action:'stcs#create') do |form| %>
+<%= form_for(Stc.new, action:'stcs#create',remote: true) do |form| %>
 
   <%= form.collection_select(:course_id, Course.all,:id, :title,{}, { :multiple => false}) %>
   <%= form.select(:semester, options_for_select([['--------','-----------'], ['Fall', 'Fall'], ['Spring', 'Spring'],['Summer', 'Summer']])) %>
