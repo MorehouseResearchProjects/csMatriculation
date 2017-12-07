@@ -1,10 +1,10 @@
 var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programming II(With Lab)",
-"Computer Organization (With Lab)","Discrete Structures", "Data Structures &amp; Algorithms (With Lab)",
-"Theory of computation", "Operating Systems (With Lab)", "Data Base Systems",
+"Computer Organization (With Lab)","Discrete Structures", "Data Structures & Algorithms (With Lab)",
+"Theory of Computation", "Operating Systems (With Lab)", "Data Base Systems",
 "Programming Languages", "Software Engineering", "Junior Seminar", "Senior Seminar",
 "Calculus I", "Calculus II", "Linear Algebra", "Set Theory",
 "Probability and Statistics", "Mechanics", "Biology", "Biology",
-"Biology", "Chemistry","E&amp;M", "CSC 400 level Elective I",
+"Biology", "Chemistry","E&M", "CSC 400 level Elective I",
 "CSC 400 level Elective II", "CSC 400 level Elective III", "English Composition I", "Engilsh Composition II",
 "World Literature", "World History I", "World History II", "Social Science Elective I",
 "Social Science Elective II", "HPED I", "HPED II", "Foreign Language",
@@ -12,17 +12,32 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 "Art Elective", "Communications",
 "Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
 "Sophomore Assembly", "Junior Assembly", "Junior Assembly",
-"Elective I", "Elective II","Emac Theory"];
-
-//make an array for  all humanities
+"Elective I", "Elective II"];
+//make an array for all computer Science
+var cscMath = ["Calculus I", "Calculus II", "Linear Algebra", "Set Theory", "Probability and Statistics"];
+var pecred = ["HPED I", "HPED II"];
+var sosci = ["Social Science Elective I", "Social Science Elective II"];
+var cscClass = ["Intro to Computer Science", "Programming I(With Lab)", "Programming II(With Lab)",
+"Computer Organization (With Lab)","Discrete Structures", "Data Structures & Algorithms (With Lab)",
+"Theory of Computation", "Operating Systems (With Lab)", "Data Base Systems",
+"Programming Languages", "Software Engineering"];
+//make an array for all seminars
+var seminars = ["Junior Seminar", "Senior Seminar"];
+//make an array for all free electives
+var freeElectives = ["CSC 400 level Elective I", "CSC 400 level Elective II", "CSC 400 level Elective III",
+"Elective I", "Elective II"];
+//make an array for  all gen ed
 var genEd = ["English Composition I", "Engilsh Composition II",
 "World Literature", "World History I", "World History II", "Foreign Language I"
 , "Foreign Language II"];
-
+//make an array for all humanities
 var humanities = ["Religion Elective", "Philosophy Elective", "Music Elective",
 "Art Elective", "Communications"];
 
-//need an array for electives, biolog&chem,physical education, junior seminar, world Literature
+//make an array for sciences
+var sciences = ["Mechanics", "Biology", "Biology", "Biology", "Chemistry","E&M"];
+
+//make an array for assemblies
 var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
 "Sophomore Assembly", "Junior Assembly", "Junior Assembly"];
 
@@ -39,8 +54,45 @@ var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assemb
 }
 */
 var stc =[]
-var cscMath = ["Calculus I", "Calculus II", "Linear Algebra", "Set Theory"];
 
+var addButtons = function(buttonNames, newDisplayId){
+
+   // make the element a checkbox
+      // give it a name we can check on the server side
+
+
+  for(var i = 0; i < buttonNames.length; i++){
+
+    var checkbox = document.createElement("input");
+    var label = document.createElement('label')
+
+
+
+
+    linebreak = document.createElement("br");
+
+
+    label.appendChild(document.createTextNode('Have you taken ' +  buttonNames[i] + '?'));
+
+    checkbox.type = "checkbox";
+    checkbox.name = buttonNames[i];
+
+
+
+    label.htmlFor = buttonNames[i];
+    label.appendChild(checkbox);
+    label.appendChild(linebreak);
+
+
+    document.getElementById(newDisplayId).appendChild(label);
+    document.getElementById(newDisplayId).appendChild(linebreak);
+    document.getElementById(newDisplayId).appendChild(linebreak);
+
+  }
+
+
+
+}
 
 
 var checkMath = function(){
@@ -50,38 +102,111 @@ var checkMath = function(){
   if(checked){
     stc.push.apply(stc,["Calculus I", "Calculus II", "Linear Algebra", "Set Theory",
                         "Probability and Statistics"]);
+
   }else if( document.getElementById("mathNo").checked){
-    window.alert("Select More courses");
+  //  window.alert("Select More courses");
+    addButtons(cscMath,"addMath");
 
   }
 }
-
 
 var checkCsc = function(){
-
   var checked = document.getElementById("cscYes").checked;
-  window.alert("in csc");
+  //window.alert("in csc");
   if(checked){
     stc.push.apply(stc,["Intro to Computer Science", "Programming I(With Lab)", "Programming II(With Lab)",
-    "Programming II(With Lab)", "Computer Organization (With Lab)",
-    "Discrete Structures", "Data Structures &amp; Algorithms (With Lab)",
-    "Theory of computation"]);
+    "Computer Organization (With Lab)","Discrete Structures", "Data Structures & Algorithms (With Lab)",
+    "Theory of Computation", "Operating Systems (With Lab)", "Data Base Systems",
+    "Programming Languages", "Software Engineering"]);
   }else if( document.getElementById("cscNo").checked ){
-      window.alert("Select More courses");
-
+    //  window.alert("Select More courses");
+      addButtons(cscClass,"addCompSci");
   }
-
 }
+var checkPE = function(){
+  //Check if probstats was selected
+  var checked = document.getElementById("peYes").checked;
 
-var checkHmn = function(){
-
-  var checked = document.getElementById("cscYes").checked;
-  window.alert("in csc");
   if(checked){
-    stc.push.apply(stc,humanities);
-  }else if( document.getElementById("cscNo").checked ){
-      window.alert("Select More courses");
+    stc.push.apply(stc,["HPED I","HPED II"]);
+
+  }else if( document.getElementById("peNo").checked){
+  //  window.alert("Select More courses");
+    addButtons(pecred,"addPe");
 
   }
-
+}
+var checkEle = function(){
+  var checked = document.getElementById("eleYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["CSC 400 level Elective I", "CSC 400 level Elective II", "CSC 400 level Elective III", "Elective I", "Elective II"]);
+  }else if( document.getElementById("eleNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(freeElectives, "addEle");
+  }
+}
+  var checkSem = function(){
+    var checked = document.getElementById("semYes").checked;
+    //window.alert("in Hmn");
+    if(checked){
+      stc.push.apply(stc,["Junior Seminar", "Senior Seminar"]);
+    }else if( document.getElementById("semNo").checked ){
+      //  window.alert("Select More courses");
+        addButtons(seminars,"addSem");
+    }
+  }
+var checkSci = function(){
+  var checked = document.getElementById("sciYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["Mechanics", "Biology", "Biology", "Biology", "Chemistry","E&M"]);
+  }else if( document.getElementById("sciNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(sciences,"addSci");
+  }
+}
+var checkHmn = function(){
+  var checked = document.getElementById("hmnYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["Religion Elective", "Philosophy Elective", "Music Elective",
+    "Art Elective", "Communications"]);
+  }else if( document.getElementById("hmnNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(humanities, "addHmn");
+  }
+}
+var checkSoSci = function(){
+  var checked = document.getElementById("sosciYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["Social Science Elective I", "Social Science Elective II"]);
+  }else if( document.getElementById("sosciNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(sosci, "addSoSci");
+  }
+}
+var checkGen = function(){
+  var checked = document.getElementById("genYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["English Composition I", "Engilsh Composition II",
+    "World Literature", "World History I", "World History II", "Foreign Language I"
+    , "Foreign Language II"]);
+  }else if( document.getElementById("genNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(genEd, "addGen");
+  }
+}
+var checkAmb = function(){
+  var checked = document.getElementById("ambYes").checked;
+  //window.alert("in Hmn");
+  if(checked){
+    stc.push.apply(stc,["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
+    "Sophomore Assembly", "Junior Assembly", "Junior Assembly"]);
+  }else if( document.getElementById("ambNo").checked ){
+    //  window.alert("Select More courses");
+      addButtons(assemblies, "addAmb");
+  }
 }
