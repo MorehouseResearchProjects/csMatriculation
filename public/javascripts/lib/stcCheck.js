@@ -13,7 +13,7 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 "Art Elective", "Communications", "Freshman Orientation",
 "Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
 "Sophomore Assembly", "Junior Assembly", "Junior Assembly",
-"Elective I", "Elective II","Emac Theory"]
+"Elective I", "Elective II","Emac Theory"];
 
 
-console.log(classes[0])
+window.alert("hello world");
