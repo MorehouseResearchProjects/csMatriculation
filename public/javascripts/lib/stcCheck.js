@@ -61,11 +61,16 @@ var remainingCourses = function(){
 
   var studentTakenCourse = "";
 
+  var tr = document.getElementById('classTable');
+    th = document.createElement('th');
+    th.innerHTML = "Remaining Courses";
+    tr.appendChild(th);
+
   for(var i = 0; i < stc.length; i++){
      studentTakenCourse = stc[i];
 
     if( classes.indexOf(studentTakenCourse) >= 0){
-         window.alert(studentTakenCourse);
+         //window.alert(studentTakenCourse);
          classes.splice( classes.indexOf(studentTakenCourse), 1 );
     }
   }
@@ -75,11 +80,11 @@ var remainingCourses = function(){
   var cell1 = "";
   var cell2 = "";
   //Creating table for remaining courses after onSubmit is clicked
-  for (var i = 0; i < classes.length; i++) {
+  for (var i = 1; i <= classes.length; i++) {
 
-          row = classTable.insertRow(i);
+          row = classTable.insertRow(i-1);
           cell1 = row.insertCell(0);
-          cell1.innerHTML = classes[i];
+          cell1.innerHTML = classes[i-1];
 
   }
 

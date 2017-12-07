@@ -1,5 +1,24 @@
 <script type="text/javascript" src="/javascripts/lib/stcCheck.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+th{
+    background-color:	#6495ED;
+    color:white;
+    font-size: 22px;
+    align:right;
+    padding-left: 12px;
+}
+
+</style>
 
 <% provide(:title, @user.name) %>
 <div class="w3-container">
@@ -10,7 +29,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-         <%= link_to "Log out", "/login", method: :destroy %>
+         <%= link_to "Log out", "/login", method: :destroy,:class => "btn btn-primary"%>
       </h1>
     </section>
 
@@ -108,14 +127,16 @@
       <div id="addAmb"></div>
 
 </form>
-<button  class="w3-button" onclick="onSubmit()">Submit Course</button>
+<button type="button" class="btn btn-primary" onclick="onSubmit()">Submit Course list</button>
 </div>
 
 </div>
 <div align="center"><table id="myTable" align="center">
 
 <div class="w3-center">
-  <table align="center" id="classTable"></table>
+  <table align="center" id="classTable" class="table-responsive table-hover table-striped" >
+
+  </table>
 </div>
 
 
