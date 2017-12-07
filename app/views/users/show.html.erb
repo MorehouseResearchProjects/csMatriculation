@@ -1,18 +1,22 @@
 <script type="text/javascript" src="/javascripts/lib/stcCheck.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
+<div class="w3-container">
+
+    <section class="w3-center">
+      <br>
+      <br>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
          <%= link_to "Log out", "/login", method: :destroy %>
       </h1>
     </section>
-  </aside>
+
 </div>
-<div class="row">
+<div class="w3-container">
+  <div class="w3-center">
 
   <form action="https://www.wikihow.com/Main-Page" method="get">
       <p>Have you completed all your Mathematics courses?</p>
@@ -104,7 +108,11 @@
       <div id="addAmb"></div>
 
 </form>
+<button  class="w3-button" onclick="onSubmit()">Submit Course</button>
+</div>
 
+</div>
+<div align="center"><table id="myTable" align="center">
 
 
 

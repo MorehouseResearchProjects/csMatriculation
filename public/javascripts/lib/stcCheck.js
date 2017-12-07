@@ -16,7 +16,9 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 //make an array for all computer Science
 var cscMath = ["Calculus I", "Calculus II", "Linear Algebra", "Set Theory", "Probability and Statistics"];
 var pecred = ["HPED I", "HPED II"];
+
 var sosci = ["Social Science Elective I", "Social Science Elective II"];
+
 var cscClass = ["Intro to Computer Science", "Programming I(With Lab)", "Programming II(With Lab)",
 "Computer Organization (With Lab)","Discrete Structures", "Data Structures & Algorithms (With Lab)",
 "Theory of Computation", "Operating Systems (With Lab)", "Data Base Systems",
@@ -41,6 +43,53 @@ var sciences = ["Mechanics", "Biology", "Biology", "Biology", "Chemistry","E&M"]
 var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
 "Sophomore Assembly", "Junior Assembly", "Junior Assembly"];
 
+
+/*
+  Function to find all id's for the buttons that were generated
+  lets call this once the user hits the submit button and we can
+  process each individual element in each of the arrays and find out which
+  buttons with the matching id's were selected
+
+  make this one function by checking if it is an array and we can
+  just call separate function to add all of its courses
+
+  str.replace(/foo/g, "bar")
+*/
+var boxIsChecked = function(courseList){
+
+
+  for(var i = 0; i < courseList.length; i++){
+
+    var currId = idMap[courseList[i]];
+  window.alert(currId);
+      var checked = document.getElementById(currId)).checked;
+
+      if(checked){
+          stc.push.apply(stc,courselist);
+      }
+
+
+  }
+
+
+
+}
+ //Call function to do a mass check for each of the id's
+ var massCheck = function(){
+
+   var sublistOfCourses = [assemblies,sciences,humanities,
+                         genEd,freeElectives,seminars,
+                         cscClass,sosci,cscMath];
+
+    for(var i = 0; i < sublistOfCourses.length; i++){
+
+      boxIsChecked(sublistOfCourses[i]);
+    }
+
+
+
+}
+
 //window.alert("hello world");
 /*
   Build function that checks to see which courses were selected related to Math
@@ -54,46 +103,6 @@ var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assemb
 }
 */
 var stc =[]
-
-var addButtons = function(buttonNames, newDisplayId){
-
-   // make the element a checkbox
-      // give it a name we can check on the server side
-
-
-  for(var i = 0; i < buttonNames.length; i++){
-
-    var checkbox = document.createElement("input");
-    var label = document.createElement('label')
-
-
-
-
-    linebreak = document.createElement("br");
-
-
-    label.appendChild(document.createTextNode('Have you taken ' +  buttonNames[i] + '?'));
-
-    checkbox.type = "checkbox";
-    checkbox.name = buttonNames[i];
-
-
-
-    label.htmlFor = buttonNames[i];
-    label.appendChild(checkbox);
-    label.appendChild(linebreak);
-
-
-    document.getElementById(newDisplayId).appendChild(label);
-    document.getElementById(newDisplayId).appendChild(linebreak);
-    document.getElementById(newDisplayId).appendChild(linebreak);
-
-  }
-
-
-
-}
-
 
 var checkMath = function(){
   //Check if probstats was selected
@@ -199,6 +208,7 @@ var checkGen = function(){
       addButtons(genEd, "addGen");
   }
 }
+
 var checkAmb = function(){
   var checked = document.getElementById("ambYes").checked;
   //window.alert("in Hmn");
@@ -209,4 +219,75 @@ var checkAmb = function(){
     //  window.alert("Select More courses");
       addButtons(assemblies, "addAmb");
   }
+}
+
+var idMap = {};
+var usedIds = [];
+
+var generateId = function(){
+
+var ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+var ID_LENGTH = 8;
+
+  var rtn = '';
+
+  for (var i = 0; i < ID_LENGTH; i++) {
+    rtn += ALPHABET.charAt(Math.floor(Math.random() * ALPHABET.length));
+  }
+  return rtn;
+
+
+}
+
+
+var addButtons = function(buttonNames, newDisplayId){
+
+   // make the element a checkbox
+      // give it a name we can check on the server side
+
+
+  for(var i = 0; i < buttonNames.length; i++){
+
+    var checkbox = document.createElement("input");
+    var label = document.createElement('label')
+
+
+
+
+    linebreak = document.createElement("br");
+
+
+    label.appendChild(document.createTextNode('Have you taken ' +  buttonNames[i] + '?'));
+
+    checkbox.type = "checkbox";
+    checkbox.name = buttonNames[i];
+    window.alert(checkbox.name);
+
+    var newCheckBoxId = generateId();
+
+    while(newCheckBoxId in usedIds){
+      newCheckBoxId = generateId();
+    }
+
+    usedIds.push(newCheckBoxId);
+    idMap[buttonNames[i]] = newCheckBoxId;
+    window.alert(newCheckBoxId);
+
+
+    label.htmlFor = buttonNames[i];
+    label.appendChild(checkbox);
+    label.appendChild(linebreak);
+
+
+    document.getElementById(newDisplayId).appendChild(label);
+    document.getElementById(newDisplayId).appendChild(linebreak);
+    document.getElementById(newDisplayId).appendChild(linebreak);
+
+  }
+
+
+
+
+
 }
