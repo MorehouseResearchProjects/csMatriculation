@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="/javascripts/lib/stcCheck.js"></script>
 
 <% provide(:title, @user.name) %>
 <div class="row">
@@ -14,7 +14,31 @@
 </div>
 <div class="row">
 
-  <%= render 'stcs/form.html.erb' %>
+  <form action="https://www.wikihow.com/Main-Page" method="get">
+      <p>Have You taken Probability and Statistics?</p>
+      Yes<input type="radio" name="course" id="mathYes" onclick="checkMath()" value="yes">
+      No<input type="radio" name="course" id="mathNo" onclick="checkMath()" value="no">
+</form>
+
+      <br>
+      <br>
+<form action="https://www.wikihow.com/Main-Page" method="get">
+      <p>Have you taken Data Structures?</p>
+      Yes<input type="radio" name="course" id="cscYes" onclick="checkCsc()" value="yes">
+      No<input type="radio" name="course" id="cscNo" onclick="checkCsc()" value="no">
+
+
+
+</form>
+<br>
+<br>
+
+<form action="https://www.wikihow.com/Main-Page" method="get">
+      <p>Have you satisfied your humanities requirements?</p>
+      Yes<input type="radio" name="course" id="cscYes" onclick="checkCsc()" value="yes">
+      No<input type="radio" name="course" id="cscNo" onclick="checkCsc()" value="no">
+
+</form>
 
 
 
