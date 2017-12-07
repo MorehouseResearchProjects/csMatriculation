@@ -10,8 +10,8 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 "Social Science Elective II", "HPED I", "HPED II", "Foreign Language",
 "Foreign Language", "Religion Elective", "Philosophy Elective", "Music Elective",
 "Art Elective", "Communications",
-"Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
-"Sophomore Assembly", "Junior Assembly", "Junior Assembly",
+"Freshman Assembly ", "Freshman Orientation", "Sophomore Assembly I",
+"Sophomore Assembly II", "Junior Assembly I", "Junior Assembly II",
 "Elective I", "Elective II"];
 //make an array for all computer Science
 var cscMath = ["Calculus I", "Calculus II", "Linear Algebra", "Set Theory", "Probability and Statistics"];
@@ -40,8 +40,8 @@ var humanities = ["Religion Elective", "Philosophy Elective", "Music Elective",
 var sciences = ["Mechanics", "Biology", "Biology", "Biology", "Chemistry","E&M"];
 
 //make an array for assemblies
-var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
-"Sophomore Assembly", "Junior Assembly", "Junior Assembly"];
+var assemblies = ["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly I",
+"Sophomore Assembly II", "Junior Assembly I", "Junior Assembly II"];
 
 
 /*
@@ -206,7 +206,7 @@ var checkSci = function(){
   var checked = document.getElementById("sciYes").checked;
   //window.alert("in Hmn");
   if(checked){
-    stc.push.apply(stc,["Mechanics", "Biology", "Biology", "Biology", "Chemistry","E&M"]);
+    stc.push.apply(stc,["Mechanics", "Biology","Chemistry","E&M"]);
   }else if( document.getElementById("sciNo").checked ){
     //  window.alert("Select More courses");
       addButtons(sciences,"addSci");
@@ -250,8 +250,8 @@ var checkAmb = function(){
   var checked = document.getElementById("ambYes").checked;
   //window.alert("in Hmn");
   if(checked){
-    stc.push.apply(stc,["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly",
-    "Sophomore Assembly", "Junior Assembly", "Junior Assembly"]);
+    stc.push.apply(stc,["Freshman Assembly", "Freshman Orientation", "Sophomore Assembly I",
+    "Sophomore Assembly II", "Junior Assembly I", "Junior Assembly II"]);
   }else if( document.getElementById("ambNo").checked ){
     //  window.alert("Select More courses");
       addButtons(assemblies, "addAmb");
