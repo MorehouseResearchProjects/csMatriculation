@@ -1,42 +1,27 @@
 
     <script type="text/javascript" src="/javascripts/lib/stcCheck.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <title>Display Courses</title>
 </head>
 <body>
-<<<<<<< HEAD
+<div class="w3-container" >
+  <div class="w3-center">
+    <center><% provide(:title, @user.name) %></center>
+  </div>
+<div>
 
-<% provide(:title, @user.name) %>
-=======
-<form action="https://www.wikihow.com/Main-Page" method="get">
-    <input type="checkbox" name="course" value="course1">Course Name<br>
-    <input type="checkbox" name="course" value="course2">Course Name<br>
-    <input type="checkbox" name="course" value="course3">Course Name<br>
-    <input type="checkbox" name="course" value="course4">Course Name<br>
-    <input type="checkbox" name="course" value="course5">Course Name<br>
-    <input type="submit" value="Submit">
-</form>
-<h1><center><% provide(:title, @user.name) %></center></h1>
-
->>>>>>> ea736400a5d881d421a852ac32711bf0f00a4de3
 <div class="row">
-    <aside class="col-md-4">
+
         <section class="user_info">
-            <h1>
+            <h1 class="w3-center">
                 <%= gravatar_for @user %>
                 <%= @user.name %>
                 <%= link_to "Log out", "/login", method: :destroy %>
             </h1>
         </section>
-    </aside>
-</div>
 
+</div>
+<button id="math"onclick="checkMath()">Have you taken Probability and statistics</button>
 
   <!--  <%= render 'stcs/form.html.erb' %> -->
 

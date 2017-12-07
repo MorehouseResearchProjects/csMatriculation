@@ -16,12 +16,15 @@ var classes = ["Intro to Computer Science", "Programming I(With Lab)", "Programm
 "Elective I", "Elective II","Emac Theory"];
 
 
-window.alert("hello world");
-
+//window.alert("hello world");
+/*
+  Build function that checks to see which courses were selected related to Math
+*/
 var checkMath = function(){
-
-  
-
+  //Check if probstats was selected
+  if(document.getElementById("math").checked == true){
+    document.write = "Clicked";
+  }
 
 
 
